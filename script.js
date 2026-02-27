@@ -27,7 +27,16 @@ for (let i = 0; i < (amount*amount); i++) {
 /* Change function*/
 const changeColor = function(e) {
     if (e.target.className === "small-container") {
-    e.target.style.backgroundColor = "red";
+        const rgbRandomize = function() {
+            let x = Math.floor(Math.random() * 256); // range is 0-255
+            let y = Math.floor(Math.random() * 256);
+            let z = Math.floor(Math.random() * 256);
+            let randomColor = "rgb(" + x + "," + y + "," + z + ")"; 
+            console.log(randomColor);
+            e.target.style.backgroundColor = randomColor                        
+    }
+    rgbRandomize()
+        
     }
 }
 
@@ -37,7 +46,7 @@ bigCont.addEventListener("mouseover", changeColor);
 
 
 
-
+mkGrid(50)
 
 
 
