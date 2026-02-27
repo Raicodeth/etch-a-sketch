@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    height: 960px;
+    width: 960px;
+    
+}
+.header {
+    display: block;
+    text-align: center;
+    background-color: rgb(158, 101, 27); 
+    width: 100%;
+    border-color: black;
+     border-style: solid; 
+}
+.big-container {
+    background-color: pink; 
+    display: flex;
+    height: 960px;
+    width: 960px;
+    flex-wrap: wrap;
+    align-content: space-around;       
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.small-container {
+    
+    
+    
+
+}
