@@ -1,4 +1,5 @@
 const bigCont = document.querySelector(".big-container");
+let allBoxes; 
 
 /* Button to clear the board, ask for input to decide the number of squares, then call the function with the input passed in*/
 const btnInput = document.querySelector(".btnInput")
@@ -20,9 +21,11 @@ for (let i = 0; i < (amount*amount); i++) {
     boxName.style.width =  `${size}px`;
     boxName.style.height = `${size}px`;    
     bigCont.appendChild(boxName);
+    allBoxes = document.querySelectorAll(".small-container");    
     console.log(`${size}`)
 }
 }
+
 
 /* Change function*/
 const changeColor = function(e) {
@@ -41,10 +44,16 @@ const changeColor = function(e) {
 }
 
 /* Mouseover event listener*/
-const allBoxes = document.querySelectorAll(".small-container");
+
 bigCont.addEventListener("mouseover", changeColor);
 
-
+// Board reset function //
+const btnReset = document.querySelector(".btnReset");
+btnReset.addEventListener("click", function() {
+    console.log('gaga')
+    console.log(allBoxes)
+    allBoxes.forEach(box => box.style.backgroundColor = "white");
+});
 
 mkGrid(50)
 
