@@ -5,7 +5,7 @@ let allBoxes;
 const btnInput = document.querySelector(".btnInput")
 btnInput.addEventListener("click", function() { 
     bigCont.replaceChildren();
-    let userInput = prompt("Select a grid size between 16 and 100. A size 16 grid means 16x16 canvas, bigger size uses more resources.", 50);
+    let userInput = prompt("Select a grid size between 16 and 100. A size 16 grid means a 16x16 canvas, bigger size uses more resources.", 50);
     amount = Math.max(16, Math.min(100, userInput))  
     mkGrid(amount);
 })
@@ -19,7 +19,8 @@ for (let i = 0; i < (amount*amount); i++) {
     boxName = document.createElement("div");
     boxName.className = "small-container";
     boxName.style.width =  `${size}px`;
-    boxName.style.height = `${size}px`;    
+    boxName.style.height = `${size}px`;
+    boxName.style.opacity = 0.1;    
     bigCont.appendChild(boxName);
     allBoxes = document.querySelectorAll(".small-container");    
     console.log(`${size}`)
@@ -27,7 +28,7 @@ for (let i = 0; i < (amount*amount); i++) {
 }
 
 
-/* Change function*/
+/* Change color function*/
 const changeColor = function(e) {
     if (e.target.className === "small-container") {
         const rgbRandomize = function() {
@@ -36,7 +37,8 @@ const changeColor = function(e) {
             let z = Math.floor(Math.random() * 256);
             let randomColor = "rgb(" + x + "," + y + "," + z + ")"; 
             console.log(randomColor);
-            e.target.style.backgroundColor = randomColor                        
+            e.target.style.backgroundColor = randomColor;
+            e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.10;                
     }
     rgbRandomize()
         
